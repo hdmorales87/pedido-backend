@@ -4,21 +4,24 @@ public class Order {
     private Long id;
     private String name;
     private double total;
+    private int statusId;
 
     public Order(String name, double total) {
-        this(null, name, total);
+        this(null, name, total, 0);
     }
 
-    public Order(Long id, String name, double total) {
+    public Order(Long id, String name, double total, int statusId) {
         if (total <= 0) throw new IllegalArgumentException();
         this.setId(id);
         this.setName(name);
         this.setTotal(total);
+        this.setStatusId(statusId);
     }
 
     public Long getId() { return id; }
     public String getName() { return name; }
     public double getTotal() { return total; }
+    public int getStatusId() { return statusId; }
 
     public void setId(Long id) {
         this.id = id;
@@ -30,5 +33,9 @@ public class Order {
 
     public void setTotal(double total) {
         this.total = total;
+    }
+    
+    public void setStatusId(int statusId) {
+        this.statusId = statusId;
     }
 }

@@ -31,7 +31,7 @@ public class OrderRepositoryAdapter implements OrderRepository {
     @Override
     public Flux<Order> findAll() {
         List<Order> orders = springDataOrderRepository.findAll().stream()
-                .map(orderEntity -> new Order(orderEntity.getId(), orderEntity.getName(), orderEntity.getTotal()))
+                .map(orderEntity -> new Order(orderEntity.getId(), orderEntity.getName(), orderEntity.getTotal(), orderEntity.getStatusId()))
                 .toList();
         return Flux.fromIterable(orders);
     }

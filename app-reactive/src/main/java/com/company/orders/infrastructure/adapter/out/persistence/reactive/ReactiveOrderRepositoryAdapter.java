@@ -43,6 +43,6 @@ public class ReactiveOrderRepositoryAdapter implements OrderRepository {
     @Override
     public Flux<Order> findAll() {
         return springDataReactiveOrderRepository.findAll()
-                .map(orderRow -> new Order(orderRow.getId(), orderRow.getName(), orderRow.getTotal()));
+                .map(orderRow -> new Order(orderRow.getId(), orderRow.getName(), orderRow.getTotal(), orderRow.getStatusId()));
     }
 }

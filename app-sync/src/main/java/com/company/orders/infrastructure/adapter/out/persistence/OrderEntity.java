@@ -17,6 +17,8 @@ public class OrderEntity {
 
     private double total;
 
+    private int statusId;
+
     public Long getId() {
         return id;
     }
@@ -39,5 +41,13 @@ public class OrderEntity {
 
     public void setTotal(double total) {
         this.total = total;
+    }
+    
+    public int getStatusId() {
+        return statusId;
+    }
+    
+    public void setStatusId(int statusId) {
+        this.statusId = statusId;
     }
 }

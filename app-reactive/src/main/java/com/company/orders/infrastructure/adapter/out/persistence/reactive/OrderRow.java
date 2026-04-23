@@ -11,6 +11,8 @@ public class OrderRow {
     private String name;
 
     private double total;
+    
+    private int statusId;
 
     public Long getId() {
         return id;
@@ -34,5 +36,13 @@ public class OrderRow {
 
     public void setTotal(double total) {
         this.total = total;
+    }
+    
+    public int getStatusId() {
+        return statusId;
+    }
+    
+    public void setStatusId(int statusId) {
+        this.statusId = statusId;
     }
 }
