@@ -1,0 +1,19 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: pedidos-reactive
+
+  r2dbc:
+    url: r2dbc:mysql://${DB_HOST:localhost}:${DB_PORT:3307}/${DB_NAME:pedidos_db}?useServerPrepareStatement=true&serverZoneId=UTC
+    username: ${DB_USERNAME:pedidos_user}
+    password: ${DB_PASSWORD:pedidos_pass}
+
+  jackson:
+    serialization:
+      indent_output: true
+
+logging:
+  level:
+    org.springframework.r2dbc: DEBUG
