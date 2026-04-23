@@ -1,13 +1,16 @@
 package com.tuempresa.pedidos.infrastructure.adapter.out.persistence.reactive;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table("pedidos")
-public class PedidoRow {
+@Table("orders")
+public class OrderRow {
     @Id
     private Long id;
-    private String nombre;
+   
+    private String name;
+
     private double total;
 
     public Long getId() {
@@ -18,12 +21,12 @@ public class PedidoRow {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getTotal() {

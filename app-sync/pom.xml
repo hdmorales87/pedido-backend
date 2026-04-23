@@ -70,7 +70,17 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.tuempresa.pedidos.infrastructure.PedidosApplication</mainClass>
+                    <mainClass>com.tuempresa.pedidos.infrastructure.OrdersApplication</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>9.22.3</version>
+                <configuration>
+                    <url>jdbc:mysql://localhost:3307/pedidos_db</url>
+                    <user>pedidos_user</user>
+                    <password>pedidos_pass</password>
                 </configuration>
             </plugin>
         </plugins>

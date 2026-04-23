@@ -60,7 +60,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.tuempresa.pedidos.infrastructure.PedidosReactiveApplication</mainClass>
+                    <mainClass>com.tuempresa.pedidos.infrastructure.OrdersReactiveApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

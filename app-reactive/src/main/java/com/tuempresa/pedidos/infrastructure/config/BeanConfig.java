@@ -1,10 +1,14 @@
 package com.tuempresa.pedidos.infrastructure.config;
 
-import com.tuempresa.pedidos.application.reactive.CrearPedidoReactiveService;
-import com.tuempresa.pedidos.application.reactive.ListarPedidosReactiveService;
-import com.tuempresa.pedidos.application.reactive.port.in.CrearPedidoReactiveUseCase;
-import com.tuempresa.pedidos.application.reactive.port.in.ListarPedidosReactiveUseCase;
-import com.tuempresa.pedidos.infrastructure.adapter.out.persistence.reactive.PedidoReactiveStore;
+import com.tuempresa.pedidos.application.reactive.CreateOrderReactiveService;
+import com.tuempresa.pedidos.application.reactive.ListOrdersReactiveService;
+import com.tuempresa.pedidos.application.reactive.UpdateOrderReactiveService;
+import com.tuempresa.pedidos.application.reactive.DeleteOrderReactiveService;
+import com.tuempresa.pedidos.application.reactive.port.in.CreateOrderReactiveUseCase;
+import com.tuempresa.pedidos.application.reactive.port.in.ListOrdersReactiveUseCase;
+import com.tuempresa.pedidos.application.reactive.port.in.UpdateOrderReactiveUseCase;
+import com.tuempresa.pedidos.application.reactive.port.in.DeleteOrderReactiveUseCase;
+import com.tuempresa.pedidos.domain.port.out.OrderRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,12 +16,22 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfig {
 
     @Bean
-    public CrearPedidoReactiveUseCase crearPedidoReactiveUseCase(PedidoReactiveStore pedidoReactiveStore) {
-        return new CrearPedidoReactiveService(pedidoReactiveStore);
+    public CreateOrderReactiveUseCase createOrderReactiveUseCase(OrderRepository orderRepository) {
+        return new CreateOrderReactiveService(orderRepository);
     }
 
     @Bean
-    public ListarPedidosReactiveUseCase listarPedidosReactiveUseCase(PedidoReactiveStore pedidoReactiveStore) {
-        return new ListarPedidosReactiveService(pedidoReactiveStore);
+    public ListOrdersReactiveUseCase listOrdersReactiveUseCase(OrderRepository orderRepository) {
+        return new ListOrdersReactiveService(orderRepository);
+    }
+
+    @Bean
+    public UpdateOrderReactiveUseCase updateOrderReactiveUseCase(OrderRepository orderRepository) {
+        return new UpdateOrderReactiveService(orderRepository);
+    }
+
+    @Bean
+    public DeleteOrderReactiveUseCase deleteOrderReactiveUseCase(OrderRepository orderRepository) {
+        return new DeleteOrderReactiveService(orderRepository);
     }
 }

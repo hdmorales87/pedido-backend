@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = "com.tuempresa.pedidos")
-public class PedidosReactiveApplication {
+public class OrdersReactiveApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PedidosReactiveApplication.class, args);
+        SpringApplication.run(OrdersReactiveApplication.class, args);
     }
 }
